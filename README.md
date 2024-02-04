@@ -4,7 +4,7 @@
 #### If you want to use this configs, follow the steps bellow:
 
 <div align='center'>
-    <img src="./img/mynvim.jpeg" width="300" height="500"/>
+    <img src="./img/mynvim.jpeg" width="500" height="300"/>
 </div>
 
 ##### 1. Copy `init.vim` file.
