@@ -411,4 +411,6 @@ nnoremap <space>eb :CocCommand explorer --preset buffer<CR>
 " List all presets
 nnoremap <space>el :CocList explPresets
 
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
