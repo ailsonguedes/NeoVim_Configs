@@ -134,10 +134,14 @@ let g:airline_powerline_fonts = 1
 
 " ALE """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ale_linters = {
+\   'cpp': [],
+\   'c': [],
 \}
 
 let g:ale_fixers = {
 \   '*': ['trim_whitespace'],
+\   'cpp': ['clang-format'],
+\   'c': ['clang-format'],
 \}
 
 let g:ale_fix_on_save = 1
@@ -154,9 +158,23 @@ if (has("nvim"))
 endif
 
 
+
+" C/C++ """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:ale_c_clangformat_options = '"-style={
+\ BasedOnStyle: google,
+\ IndentWidth: 4,
+\ ColumnLimit: 100,
+\ AllowShortBlocksOnASingleLine: Always,
+\ AllowShortFunctionsOnASingleLine: Inline,
+\ FixNamespaceComments: true,
+\ ReflowComments: false,
+\ }"'
+
+
+
 " COQ (Conquer of Completion)"""""""""""""""""""""""""""""""""""""""""""
 
-let g:coc_global_extensions = ['coc-snippets', 'coc-explorer', ]
+let g:coc_global_extensions = ['coc-snippets', 'coc-explorer', 'coc-clangd', ]
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
