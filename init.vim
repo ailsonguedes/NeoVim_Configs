@@ -10,6 +10,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim' , { 'branch' : 'release' }
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 Plug 'honza/vim-snippets'
 Plug 'jiangmiao/auto-pairs'
 
@@ -19,6 +20,16 @@ if (has("nvim"))
 endif
 
 call plug#end()
+
+
+"Toggleterm""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require("toggleterm").setup{
+  open_mapping = [[<c-t>]],
+  -- outras configurações
+}
+EOF
+
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on            " Enable syntax highlight
